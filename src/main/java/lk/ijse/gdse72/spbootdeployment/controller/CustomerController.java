@@ -10,17 +10,4 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/customers")
 public class CustomerController {
 
-    @Autowired
-    private CustomerService customerService;
-
-    @GetMapping
-    public String getCustomers() {
-        return "List of all customers";
-    }
-
-    @PostMapping("/add")
-    public String addCustomer(@RequestBody CustomerDTO customerDTO) {
-        Customer saved = customerService.saveCustomer(customerDTO);
-        return "Customer added successfully: " + saved.getId();
-    }
 }
